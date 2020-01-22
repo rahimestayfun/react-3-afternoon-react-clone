@@ -1,0 +1,18 @@
+.buttons{
+    display: flex;
+  
+}
+.middle-buttons{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+.middle-buttons button{
+    font-size: 20px;
+    background-color: rgb(77, 139, 231);
+    border-radius: 5px;
+    border:1px solid transparent;
+
+}
