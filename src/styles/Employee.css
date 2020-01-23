@@ -5,9 +5,10 @@
     width: 700px;
     height: 400px;
     border: 1px solid black;
-    padding: 50px;
+    padding: 40px;
     box-sizing: border-box;
     background-color: rgb(245, 240, 240);
+    margin-top: 40px;
 
 }
 .counter{
@@ -15,6 +16,9 @@
 }
 .info{
     text-align: left;
+}
+#name{
+    margin-bottom: 10px
 }
 .info span{
     font-weight: bold;

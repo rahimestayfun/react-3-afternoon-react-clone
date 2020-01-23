@@ -2,7 +2,7 @@ import React from "react";
 import data from "./../data/data";
 import "./../styles/Employee.css";
 import Button from "./Button";
-import './../styles/Employee.css'
+import "./../styles/Employee.css";
 
 class Employee extends React.Component {
   constructor() {
@@ -36,6 +36,14 @@ class Employee extends React.Component {
       });
     }
   };
+  deleteEmployee = () => {
+    this.state.myData.splice(this.state.position, 1);
+    this.setState({ myData: this.state.myData });
+    // console.log(this.state.myData)
+  };
+  editEmployee = () => {
+
+  };
   render() {
     const { myData, position } = this.state;
     let favoriteMovies = myData[position]["favoriteMovies"];
@@ -44,11 +52,11 @@ class Employee extends React.Component {
     });
     return (
       <div className="main-container">
-        <h1 className='counter'>
+        <h1 className="counter">
           {this.state.position + 1} / {this.state.myData.length}
         </h1>
-        <section className='info'>
-          <h1>
+        <section className="info">
+          <h1 id="name">
             {this.state.myData[this.state.position].name.first}{" "}
             {this.state.myData[this.state.position].name.last}
           </h1>
@@ -56,11 +64,17 @@ class Employee extends React.Component {
             <span>From:</span> {this.state.myData[this.state.position].city},{" "}
             {this.state.myData[this.state.position].country}
           </p>
-          <p><span>Job Title:</span> {this.state.myData[this.state.position].title}</p>
-          <p><span>Employer:</span> {this.state.myData[this.state.position].employer}</p>
+          <p>
+            <span>Job Title:</span>{" "}
+            {this.state.myData[this.state.position].title}
+          </p>
+          <p>
+            <span>Employer:</span>{" "}
+            {this.state.myData[this.state.position].employer}
+          </p>
           <section />
 
-          <section className='movies'>
+          <section className="movies">
             <h4>Favorite Movies</h4>
             <ol>
               {mappedMovies}
@@ -73,6 +87,7 @@ class Employee extends React.Component {
         <Button
           nextButtonFunction={this.nextButtonFunction}
           previousButtonFunction={this.previousButtonFunction}
+          deleteEmployee={this.deleteEmployee}
         />
       </div>
     );

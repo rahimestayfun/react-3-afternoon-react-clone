@@ -7,7 +7,7 @@ function Button(props){
 <h3 onClick={props.previousButtonFunction}>{'<'}Previous </h3>
             <div className='middle-buttons'>
                 <button>Edit</button>
-                <button>Delete</button>
+                <button onClick={props.deleteEmployee}>Delete</button>
                 <button>New</button>
             </div>
     <h3 onClick={props.nextButtonFunction}>Next{'>'}</h3>
